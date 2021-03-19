@@ -181,6 +181,41 @@ function byField(field) {
  
 /*---------------------------------------*/
 
+/*Функции валидации формы*/
+
+/*если в allinput(нодлист с инпутами и текстареями) нет текста, бордер формы окрашивается в красный цвет, при помощи класса "red" */
+
+function createAndPush() {
+  let objVal = {};
+  allInput.forEach(input => {
+    objVal[input.id] = input.value;
+  });
+  Object.keys(objVal).some(el => {
+    allInput.forEach(input => {
+      if (!objVal[el]) {
+        input.id === el && toggleClas(input, 'red');
+        console.log('Заполните все поля')
+      } else {
+        input.id === el && toggleClas(input, 'red', false);
+      }
+    });
+  });
+  if (Object.values(objVal).every(val => !!val.length)) {
+    objVal.price += '$';
+    arr.push(objVal);
+    setTimeout(() => clearForm(), 100);
+  }
+}
+//функция добавления/удаления класса, зависит от истинности значения toggle
+
+function toggleClas(elem, name, toggle = true) {
+  toggle ? elem.classList.add(name) : elem.classList.remove(name);
+}
+
+/*---------------------------------------*/
+
+
+
 /*Глубинное копирование объектов*/
 
 function deepCopy(obj, newObj = {}) {
