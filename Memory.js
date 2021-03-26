@@ -81,6 +81,14 @@ const isInteger = (num) => (num ^ 0) === num;
 
 /*---------------------------------------*/
 
+/* перевести градусы в радианы*/
+
+const getRadians = degrees => (Math.PI / 180) * degrees;
+
+
+/*---------------------------------------*/
+
+
 /*получить ключ по значению*/
 
 function getKeyByValue(object, value) {
