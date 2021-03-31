@@ -252,6 +252,32 @@ function deepCopy(obj, newObj = {}) {
 
 /*---------------------------------------*/
 
+/*Валидация email*/
+
+
+function validateEmail(email) {
+  email = email.trim();
+  const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  return reg.test(email);
+}
+
+/*---------------------------------------*/
+
+/*плавный скрол на якоря*/
+
+const anchors = document.querySelectorAll(' a[href*="#"]');
+anchors.forEach(anchor => {
+  if (anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      anchorId = this.getAttribute('href');
+      document.querySelector(anchorId).scrollIntoView({ behavior: 'smooth', block: 'start' })
+    });
+  }
+});
+
+/*---------------------------------------*/
+
 
 /*Получение дня недели*/
 
