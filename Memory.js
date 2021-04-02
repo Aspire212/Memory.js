@@ -279,6 +279,13 @@ anchors.forEach(anchor => {
 /*---------------------------------------*/
 
 
+/*Итерация объекта*/
+//перебирает FormData
+for (let [name, value] of data) {
+  console.log(`${name} = ${value}`); // key1=value1, потом key2=value2
+  
+/*---------------------------------------*/
+
 /*Получение дня недели*/
 
 function dayWeek(date) {
