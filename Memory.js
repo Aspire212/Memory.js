@@ -320,3 +320,12 @@ const sum = (a, b) => b !== undefined ? a + b : (b) => a + b;
 //console.log(sum(1)(2))
 
 /*---------------------------------------*/
+
+
+/*    пагинация  */
+//elPerPage элементов на странице
+const pagination = (pageNumber, arr, elPerPage) => {
+    let lastElem = pageNumber * elPerPage;
+    let firstElem = lastElem - elPerPage;
+    return arr.slice(firstElem, lastElem);
+}
